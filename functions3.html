@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Underscore.js learning object functions</title>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+</head>
+<body>
+    <h1>Underscore functions</h1>
+    <script>
+        setTimeout(function() {
+            window.location.href = window.location.href;
+        }, 8000);
+
+        var u = _.noConflict();
+
+        console.log(u.range(5));
+
+        console.log('-------------');
+
+        var _ = u.noConflict();
+
+        console.log(_.range(10));
+
+        console.log('-------------');
+
+        var  user = {
+            name: 'John'
+        };
+
+        var result = user === _.identity(user);
+
+        console.log(result);
+
+        console.log('-------------');
+
+        var myFunction = function(n) {
+            console.log('iteration ' + n)
+        };
+
+        _(3).times(function(n) {myFunction(n)});
+
+        console.log('-------------');
+
+        var rand = _.random(0, 100);
+
+        console.log(rand);
+
+        console.log('-------------');
+
+        _.mixin({
+            yell: function(string) {
+                return string.toUpperCase() + '!!';
+            }
+        });
+
+        var name = _('brad').yell();
+
+        console.log(name);
+
+        console.log('-------------');
+
+        var key1 = _.uniqueId('SKU_');
+        var key2 = _.uniqueId('SKU_');
+
+        console.log(key1);
+        console.log(key2);
+
+        console.log('-------------');
+
+        var escape = _.escape('i like apples & oranges');
+
+        console.log(escape);
+        console.log(_.unescape(escape));
+
+        console.log('-------------');
+
+        var object = {
+            test: 'my test',
+            something: function() {
+                return 'something'
+            }
+        };
+
+        var res = _.result(object, 'something');
+
+        console.log(res);
+        console.log(_.result(object, 'test'));
+
+        console.log('-------------');
+
+        var dateNow = _.now();
+        console.log(dateNow);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

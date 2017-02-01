@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Underscore.js learning object functions</title>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+</head>
+<body>
+    <h1 style="margin-bottom:50000px">Underscore functions</h1>
+<button id="myButton">My button</button>
+    <script>
+        setTimeout(function() {
+            window.location.href = window.location.href;
+        }, 8000);
+
+        var func = function(greeting) {
+            return greeting + 'My name is ' + this.name
+        };
+
+        func = _.bind(func, {name: 'Brad'}, 'Hello ');
+
+        console.log(func());
+
+        var myButtonView = {
+            msg: 'Hello World',
+            onClick: function(){alert('clicked: ' + this.msg)},
+            onHover: function(){alert('hovering: ' + this.msg)}
+        };
+
+        _.bindAll(myButtonView, 'onClick', 'onHover');
+
+        $('#myButton').bind('click', myButtonView.onClick);
+        $('#myButton').bind('mouseover', myButtonView.onHover);
+
+        var subtract = function(a, b) {
+            return b - a
+        };
+
+        var sub5 = _.partial(subtract, 5);
+        console.log(sub5(20));
+
+        var log = _.bind(console.log, console);
+
+        _.delay(log, 1000, 'hello');
+        _.delay(console.log, 3000, 'ooololhello');
+
+        var func1 = function() {
+            alert('you called func1')
+        };
+
+        var foo = _.throttle(func1, 100);
+        $(window).scroll(foo);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

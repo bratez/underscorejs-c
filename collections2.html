@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Underscore.js learning object functions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+</head>
+<body>
+    <h1>Underscore collections</h1>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = window.location.href;
+        }, 8000);
+
+        var nums = [1,2,3,4,5,6,7,8,9,10];
+
+        var evens = _.filter(nums, function(num) {
+            return num % 2 == 0;
+        });
+
+        var even = _.find(nums, function(num) {
+            return num % 2 == 0;
+        });
+
+        console.log(evens);
+        console.log(even);
+
+        console.log('----------------');
+
+        var users = [
+            {
+                name: 'Tim',
+                color: 'red',
+                age: 40
+            },
+            {
+                name: 'Steven',
+                color: 'blue',
+                age: 33
+            },
+            {
+                name: 'Tasha',
+                color: 'green',
+                age: 42
+            },
+            {
+                name: 'Shawn',
+                color: 'red',
+                age: 19
+            }
+        ];
+
+        var numbers = [1,2,3,4,5,6,7,8,9,10];
+        var result = _.where(users, {color: 'red'});
+        var result2 = _.findWhere(users, {color: 'red'});
+
+        console.log(result);
+        console.log(result2);
+
+        console.log('----------------');
+
+        var odds = _.reject(numbers, function(num) {
+            return num % 2 == 0;
+        });
+
+        var every = _.every([true, 1, 'yes', null], _.identity);
+        var some = _.some([true, 1, 'yes', null], _.identity);
+
+        console.log(odds);
+        console.log(every);
+        console.log(some);
+
+        console.log('----------------');
+
+        var contains = _.contains(numbers, 9);
+
+        console.log(contains);
+
+        console.log('----------------');
+
+        function addOne() {
+            return this + 1
+        }
+
+        var invoke = _.invoke(numbers, addOne);
+
+        console.log(invoke);
+
+        console.log('----------------');
+
+        var pluck = _.pluck(users, 'color');
+
+        console.log(pluck);
+
+        console.log('----------------');
+
+        var max = _.max(users, 'age');
+
+        console.log(max);
+
+        console.log('----------------');
+
+        var min = _.min(users, 'age');
+
+        console.log(min);
+
+        console.log('----------------');
+
+        var sortby = _.sortBy(users, 'age');
+
+        console.log(sortby.reverse());
+
+        console.log('----------------');
+
+        var groupBy = _.groupBy(users, 'age');
+
+        console.log(groupBy);
+
+        console.log('----------------');
+
+        var indexBy = _.indexBy(users, 'name');
+
+        console.log(indexBy);
+
+        console.log('----------------');
+
+        var countBy = _.countBy(users, 'name');
+
+        console.log(countBy);
+
+        console.log('----------------');
+
+        var shuffle = _.shuffle(users);
+
+        console.log(shuffle);
+
+        console.log('----------------');
+
+        var sample = _.sample(users);
+
+        console.log(sample);
+
+        console.log('----------------');
+
+        var size = _.size(users);
+
+        console.log(size);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

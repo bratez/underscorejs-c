@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Small App Index</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="data.js" type="application/javascript"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Customer Data</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div id="tableWrapper" class="col-md-12">
+                Start here
+            </div>
+        </div>
+    </div>
+
+    <script type="text/template" id="customerTableTemplate">
+        <h2 class="page-header">Customers</h2>
+        <table class="table table-striped" id="customerTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            <% _.each(customers, function(customer) { %>
+                <tr>
+                    <td><%- customer._id %></td>
+                    <td><%- customer.name %></td>
+                    <td><%- customer.company %></td>
+                    <td><%- customer.email %></td>
+                    <td>
+                        <a href="details.html?customer=<%- customer._id %>" class="btn btn-default">
+                            Details
+                        </a>
+                    </td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </script>
+    <script>
+        var customerTableTemplate = _.template(document.getElementById('customerTableTemplate').innerHTML);
+
+        var customers = _.sortBy(customers, 'name');
+
+        var templateData = {
+            customers: customers
+        };
+
+        document.getElementById('tableWrapper').innerHTML = customerTableTemplate(templateData);
+    </script>
+</body>
+</html>
