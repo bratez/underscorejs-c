@@ -12,9 +12,6 @@
 <body>
     <h1>Underscore functions</h1>
     <script>
-        setTimeout(function() {
-            window.location.href = window.location.href;
-        }, 8000);
 
         var myFunction = function() {
             console.log('hello')
@@ -25,6 +22,12 @@
         initialize();
         initialize();
 
+        console.log('-------------');
+
+
+
+
+
         var render = _.after(5, myFunction);
         var before = _.before(2, myFunction);
         var numbers = [1,2,3,4,5,6];
@@ -32,22 +35,32 @@
         _.each(numbers, function(number) {
             before();
             render();
-            console.log(number)
+            console.log('rendering')
         });
 
         console.log('-------------');
+
+
+
+
+
 
         var hello = function(name) {
             return 'hello my name is ' + name;
         };
 
-        var ololo = _.wrap(hello, function(func) {
-            return "before, " + func("Brad") + ", after";
+        var ololo = _.wrap(hello, function(hello) {
+            return "before, " + hello("Brad") + ", after";
         });
 
         console.log(ololo());
 
         console.log('-------------');
+
+
+
+
+
 
         var greet = function(name) {
             return 'hello my name is ' + name;

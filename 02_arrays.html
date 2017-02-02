@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Underscore.js learning object functions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+</head>
+<body>
+<h1>Underscore arrays</h1>
+
+<script>
+
+    console.log('var numbers = [1,2,3,4], i = 3;');
+    var numbers = [1,2,3,4], i = 3;
+
+    console.log('console.log(_.isArray(numbers));');
+    console.log(_.isArray(numbers));
+
+    console.log('console.log(_.isArray(i));');
+    console.log(_.isArray(i));
+
+    console.log(sayIt);
+    function sayIt() {
+        return 'something';
+    }
+
+    console.log('console.log(_.isFunction(sayIt));');
+    console.log(_.isFunction(sayIt));
+
+    console.log('console.log(_.isFunction(numbers));');
+    console.log(_.isFunction(numbers));
+
+    console.log("console.log(_.isString('Hello'));");
+    console.log(_.isString('Hello'));
+
+    console.log('console.log(_.isNumber(i));');
+    console.log(_.isNumber(i));
+
+    console.log('console.log(_.isBoolean(false));');
+    console.log(_.isBoolean(false));
+
+    console.log('console.log(_.isDate(numbers));');
+    console.log(_.isDate(numbers));
+
+    console.log('console.log(_.isDate(new Date()));');
+    console.log(_.isDate(new Date()));
+
+    console.log('console.log(_.isRegExp(numbers));');
+    console.log(_.isRegExp(numbers));
+
+    console.log('console.log(_.isNull(null));');
+    console.log(_.isNull(null));
+
+    console.log('console.log(_.isUndefined(window.missingVar));');
+    console.log(_.isUndefined(window.missingVar));
+
+    console.log(trying);
+    function trying() {
+        try {
+            throw new TypeError('example')
+        } catch (err) {
+            console.log(_.isError(err))
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

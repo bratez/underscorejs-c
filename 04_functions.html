@@ -10,31 +10,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 </head>
 <body>
-    <h1 style="margin-bottom:50000px">Underscore functions</h1>
-<button id="myButton">My button</button>
+    <h1>Underscore functions</h1>
+    <button style="margin-bottom:50000px" id="myButton">My button</button>
+
     <script>
-        setTimeout(function() {
-            window.location.href = window.location.href;
-        }, 8000);
 
         var func = function(greeting) {
-            return greeting + 'My name is ' + this.name
+            return greeting + ' My name is ' + this.name
         };
+        console.log(func);
+        console.log(func('Hello'));
 
         func = _.bind(func, {name: 'Brad'}, 'Hello ');
-
+        console.log("_.bind(func, {name: 'Brad'}, 'Hello ')");
         console.log(func());
+
+        console.log('-------------------');
+
+
+
+
 
         var myButtonView = {
             msg: 'Hello World',
-            onClick: function(){alert('clicked: ' + this.msg)},
-            onHover: function(){alert('hovering: ' + this.msg)}
+            onClick: function(){console.log('clicked: ' + this.msg)},
+            onHover: function(){console.log('hovering: ' + this.msg)}
         };
 
         _.bindAll(myButtonView, 'onClick', 'onHover');
 
         $('#myButton').bind('click', myButtonView.onClick);
         $('#myButton').bind('mouseover', myButtonView.onHover);
+
+        console.log('-------------------');
+
+
+
+
+
+
+
+
 
         var subtract = function(a, b) {
             return b - a
@@ -43,17 +59,38 @@
         var sub5 = _.partial(subtract, 5);
         console.log(sub5(20));
 
-        var log = _.bind(console.log, console);
+        console.log('-------------------');
 
-        _.delay(log, 1000, 'hello');
+
+
+
+
+
+
+
+
         _.delay(console.log, 3000, 'ooololhello');
 
-        var func1 = function() {
-            alert('you called func1')
+        console.log('-------------------');
+
+
+
+
+
+
+
+        var func0 = function() {
+            console.log('Document is ready')
         };
 
+        var func1 = function() {
+            console.log('you called func1')
+        };
+
+        var ready = _.throttle(func0, 100);
         var foo = _.throttle(func1, 100);
         $(window).scroll(foo);
+        $(window).ready(ready);
     </script>
 </body>
 </html>

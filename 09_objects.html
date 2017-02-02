@@ -9,9 +9,6 @@
     <h1>Underscore object functions</h1>
 
     <script>
-        setTimeout(function() {
-            window.location.href = window.location.href;
-        }, 8000);
 
         var user = {
             id: 1,
@@ -37,24 +34,26 @@
             phone: '555-555-5555'
         };
 
-        // keys
+        var user4 = {};
+
+        console.log(user,user2,user3,user4);
+
+        console.log('----------keys-----------');
         console.log(_.keys(user));
 
-        // values
+        console.log('----------values-----------');
         console.log(_.values(user));
 
-        // map
+        console.log('-----------mapObject----------');
         _.mapObject(user, function(val, key) {
             console.log(key + ': ' + val);
         });
 
-        // pairs
+        console.log('-----------pairs----------');
         console.log(_.pairs(user));
 
-        // invert
+        console.log('-------invert--------------');
         console.log(_.invert(user));
-
-        console.log('---------------------');
 
         function User(id, name, age, email, phone) {
             this.id = id;
@@ -62,10 +61,11 @@
             this.age = age;
             this.email = email;
             this.phone = phone;
-
-            console.log(this);
         }
 
+        console.log(User);
+
+        console.log('------------object-----create---------');
         var brad = _.create(User.prototype, {id:1, name: 'Brad Traversy', age: 34, email: 'test@test.com', phone: '555-555-5555'});
 
         brad.sayName = function() {
@@ -80,9 +80,14 @@
 
         console.log(_.functions(brad));
 
-        console.log('---------------------');
+
+
+
+        console.log('------------extend---------');
 
         console.log(_.extend(user, {location: 'Boston'}));
+
+        console.log('------------pick---------');
 
         console.log(_.pick(user, 'name', 'age'));
 
@@ -90,43 +95,44 @@
             console.log(_.isNumber(value));
         }));
 
-        console.log('---------------------');
+        console.log('---------clone------------');
 
         var john = _.clone(user);
         user.age = 999;
         console.log(user);
         console.log(john);
 
-        console.log('---------------------');
+        console.log('----------omit-----------');
 
         console.log(_.omit(user, 'age', 'phone'));
 
-        console.log('---------------------');
 
 
-        //hasOwnProperty
+        console.log('-----has----------------');
+
         console.log(_.has(user, 'age'));
 
+        console.log('-----property---------');
+        console.log(_.property('name')(user));
         console.log('John Doe' === _.property('name')(user));
-        console.log('John Doe' === _.property('age')(user));
 
-        console.log('---------------------');
 
+        console.log('----------propertyOf-----------');
         console.log(_.propertyOf(user)('name'));
         console.log(_.propertyOf(user)('weight'));
 
-        console.log('---------------------');
 
+        console.log('---------isEqual------------');
         console.log(_.isEqual(user, user2));
         console.log(_.isEqual(user3, user2));
 
-        console.log('---------------------');
 
+        console.log('---------isMatch------------');
         console.log(_.isMatch(user, {name: 'John Doe'}));
 
-        console.log('---------------------');
-
+        console.log('---------isEmpty------------');
         console.log(_.isEmpty(user));
+        console.log(_.isEmpty(user4));
     </script>
 </body>
 </html>

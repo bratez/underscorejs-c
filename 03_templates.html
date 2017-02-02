@@ -30,12 +30,12 @@
     </script>
 
     <script>
-        setTimeout(function() {
-            window.location.href = window.location.href;
-        }, 8000);
+        console.log(document.getElementById('template').innerHTML);
 
         var content = document.getElementById('content');
         var tmpl = document.getElementById('template');
+
+        console.log('_.template(tmpl.innerHTML);');
         var template = _.template(tmpl.innerHTML);
 
         var data = {
@@ -60,7 +60,9 @@
                 }
             ]
         };
+        console.log(data);
 
+        console.log('content.innerHTML = template(data);');
         content.innerHTML = template(data);
     </script>
 </body>

@@ -12,21 +12,23 @@
 <body>
     <h1>Underscore functions</h1>
     <script>
-        setTimeout(function() {
-            window.location.href = window.location.href;
-        }, 8000);
 
         var u = _.noConflict();
 
         console.log(u.range(5));
 
-        console.log('-------------');
+
 
         var _ = u.noConflict();
 
         console.log(_.range(10));
 
         console.log('-------------');
+
+
+
+
+
 
         var  user = {
             name: 'John'
@@ -38,6 +40,13 @@
 
         console.log('-------------');
 
+
+
+
+
+
+
+
         var myFunction = function(n) {
             console.log('iteration ' + n)
         };
@@ -46,11 +55,20 @@
 
         console.log('-------------');
 
+
+
+
+
         var rand = _.random(0, 100);
 
         console.log(rand);
 
         console.log('-------------');
+
+
+
+
+
 
         _.mixin({
             yell: function(string) {
@@ -64,6 +82,10 @@
 
         console.log('-------------');
 
+
+
+
+
         var key1 = _.uniqueId('SKU_');
         var key2 = _.uniqueId('SKU_');
 
@@ -72,12 +94,26 @@
 
         console.log('-------------');
 
+
+
+
+
+
+
+
         var escape = _.escape('i like apples & oranges');
 
         console.log(escape);
         console.log(_.unescape(escape));
 
         console.log('-------------');
+
+
+
+
+
+
+
 
         var object = {
             test: 'my test',

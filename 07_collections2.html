@@ -9,11 +9,11 @@
     <h1>Underscore collections</h1>
 
     <script>
-        setTimeout(function() {
-            window.location.href = window.location.href;
-        }, 8000);
 
         var nums = [1,2,3,4,5,6,7,8,9,10];
+        console.log(nums);
+
+        console.log('---filter--------find-----');
 
         var evens = _.filter(nums, function(num) {
             return num % 2 == 0;
@@ -26,7 +26,7 @@
         console.log(evens);
         console.log(even);
 
-        console.log('----------------');
+        console.log('----where------findWhere------');
 
         var users = [
             {
@@ -48,6 +48,16 @@
                 name: 'Shawn',
                 color: 'red',
                 age: 19
+            },
+            {
+                name: 'Brad',
+                color: 'black',
+                age: 19
+            },
+            {
+                name: 'Tasha',
+                color: 'black',
+                age: 19
             }
         ];
 
@@ -58,7 +68,7 @@
         console.log(result);
         console.log(result2);
 
-        console.log('----------------');
+        console.log('----reject----every-----some---');
 
         var odds = _.reject(numbers, function(num) {
             return num % 2 == 0;
@@ -71,13 +81,13 @@
         console.log(every);
         console.log(some);
 
-        console.log('----------------');
+        console.log('-------contains---------');
 
         var contains = _.contains(numbers, 9);
 
         console.log(contains);
 
-        console.log('----------------');
+        console.log('-------invoke---------');
 
         function addOne() {
             return this + 1
@@ -87,61 +97,61 @@
 
         console.log(invoke);
 
-        console.log('----------------');
+        console.log('-------pluck---------');
 
         var pluck = _.pluck(users, 'color');
 
         console.log(pluck);
 
-        console.log('----------------');
+        console.log('-------max---------');
 
         var max = _.max(users, 'age');
 
         console.log(max);
 
-        console.log('----------------');
+        console.log('------min----------');
 
         var min = _.min(users, 'age');
 
         console.log(min);
 
-        console.log('----------------');
+        console.log('-------sortBy-----reverse()----');
 
         var sortby = _.sortBy(users, 'age');
 
         console.log(sortby.reverse());
 
-        console.log('----------------');
+        console.log('--------groupBy--------');
 
         var groupBy = _.groupBy(users, 'age');
 
         console.log(groupBy);
 
-        console.log('----------------');
+        console.log('---------indexBy-------');
 
         var indexBy = _.indexBy(users, 'name');
 
         console.log(indexBy);
 
-        console.log('----------------');
+        console.log('-------countBy---------');
 
         var countBy = _.countBy(users, 'name');
 
         console.log(countBy);
 
-        console.log('----------------');
+        console.log('--------shuffle--------');
 
         var shuffle = _.shuffle(users);
 
         console.log(shuffle);
 
-        console.log('----------------');
+        console.log('-------sample---------');
 
         var sample = _.sample(users);
 
         console.log(sample);
 
-        console.log('----------------');
+        console.log('-------size---------');
 
         var size = _.size(users);
 

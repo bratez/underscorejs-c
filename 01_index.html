@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Underscore.js learning</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+</head>
+<body>
+    <h1>Underscore</h1>
+
+    <script>
+
+        console.log("var users = ['Jeff','Mike','Sal','Janet'];");
+        var users = ['Jeff','Mike','Sal','Janet'];
+
+        console.log('console.log(_.first(users));');
+        console.log(_.first(users));
+
+        console.log('console.log(_.last(users));');
+        console.log(_.last(users));
+
+        console.log('console.log(_.initial(users));');
+        console.log(_.initial(users));
+
+        console.log('console.log(_.initial(users, 2));');
+        console.log(_.initial(users, 2));
+
+        console.log('console.log(_.rest(users, 2));');
+        console.log(_.rest(users, 2));
+
+        console.log('console.log(_.rest(users, 2));');
+        console.log(_.rest(users, 2));
+
+        console.log('var products = [1, 2, 3, 0, 4, false, 5, "", undefined, NaN];');
+        var products = [1, 2, 3, 0, 4, false, 5, '', undefined, NaN];
+
+        console.log('console.log(_.compact(products));');
+        console.log(_.compact(products));
+
+        console.log("var newUsers = ['Jeff', ['Mike','Sal', ['Mike','Sal']],'Janet'];");
+        var newUsers = ['Jeff', ['Mike','Sal', ['Mike','Sal']],'Janet'];
+
+        console.log('console.log(_.flatten(newUsers));');
+        console.log(_.flatten(newUsers));
+
+        console.log('console.log(_.flatten(newUsers, true));');
+        console.log(_.flatten(newUsers, true));
+
+        console.log("var colors = ['red','blue','green','yellow'];");
+        var colors = ['red','blue','green','yellow'];
+
+        console.log("console.log(_.without(colors, 'green', 'blue'));");
+        console.log(_.without(colors, 'green', 'blue'));
+
+        console.log('console.log(_.union([11,2,3,3], [3,2,6,9], [9,4,1,10]));');
+        console.log(_.union([11,2,3,3], [3,2,6,9], [9,4,1,10]));
+
+        console.log('console.log(_.intersection([11,2,3,9], [3,2,6,9], [9,4,1,10,3]));');
+        console.log(_.intersection([11,2,3,9], [3,2,6,9], [9,4,1,10,3]));
+
+        console.log('console.log(_.difference([11,2,3,9], [3,2,6,9]));');
+        console.log(_.difference([11,2,3,9], [3,2,6,9]));
+
+        console.log('var ids = [1123123, 2123545, 2123545, 3456456, 67456, 43455345, 43455345];');
+        var ids = [1123123, 2123545, 2123545, 3456456, 67456, 43455345, 43455345];
+
+        console.log('console.log(_.uniq(ids));');
+        console.log(_.uniq(ids));
+
+        console.log("var arr1 = ['Bob','Will','Jan'];");
+        var arr1 = ['Bob','Will','Jan'];
+
+        console.log('var arr2 = [25,40,32];');
+        var arr2 = [25,40,32];
+
+        console.log('var arr3 = [true, false, false];');
+        var arr3 = [true, false, false];
+
+        console.log('console.log(_.zip(arr1, arr2, arr3));');
+        console.log(_.zip(arr1, arr2, arr3));
+
+        console.log('console.log(_.unzip(_.zip(arr1, arr2, arr3)));');
+        console.log(_.unzip(_.zip(arr1, arr2, arr3)));
+
+        console.log('console.log(_.object(arr1, arr2));');
+        console.log(_.object(arr1, arr2));
+
+        console.log('console.log(_.range(1, 21));');
+        console.log(_.range(1, 21));
+
+        console.log('console.log(_.range(1, 21, 2));');
+        console.log(_.range(1, 21, 2));
+
+        console.log('var numbers = _.range(1, 21);');
+        var numbers = _.range(1, 21);
+
+        console.log('console.log(_.indexOf(numbers, 9));');
+        console.log(_.indexOf(numbers, 9));
+
+        console.log('numbers.push(4);');
+        numbers.push(4);
+
+        console.log('console.log(_.lastIndexOf(numbers, 4));');
+        console.log(_.lastIndexOf(numbers, 4));
+
+        console.log('numbers = _.range(0, 101, 10);');
+        numbers = _.range(0, 101, 10);
+
+        console.log('numbers.splice(_.sortedIndex(numbers, 45), 0, 45);');
+        numbers.splice(_.sortedIndex(numbers, 45), 0, 45);
+
+        console.log('console.log(numbers);');
+        console.log(numbers);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

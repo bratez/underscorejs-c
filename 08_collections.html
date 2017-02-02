@@ -9,10 +9,6 @@
     <h1>Underscore collections</h1>
 
     <script>
-        setTimeout(function() {
-            window.location.href = window.location.href;
-        }, 8000);
-
         var names = ['George', 'Tim', 'Sam', 'Mary'];
 
         var user = {
@@ -51,6 +47,8 @@
             console.log(name);
         });
 
+
+        console.log('-------map----------');
         var mappedNames = _.map(names, function(name, key, items) {
             return String(name).toUpperCase();
         });
@@ -63,9 +61,11 @@
 
         console.log(mappedUser);
 
+        console.log('--------filter---------');
+
         console.log(_.filter(['red', undefined, undefined, 'blue', undefined, 'orange'], undefined));
 
-        console.log('-----------------');
+        console.log('----------range-------');
 
         var numbers = _.range(20);
 
